@@ -1,0 +1,30 @@
+
+html{
+  height: 100%;
+}
+body{
+  height: calc(100% - 24px);
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nunito Sans', sans-serif;}
+
+#root {
+  height: 100%;
+  max-width: 1240px;
+  margin: 18px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+h3 { font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+h4, h5 { font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+}

@@ -1,7 +1,7 @@
 import Page from "../components/Page";
 import Content from "../components/Content";
 
-export default function Index() {
+export default function Who() {
   return (
     <Page>
       <Content>
