@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { routes } from "../../router/routes";
 import { contactIconsLinks } from "../../router/links";
-import NavButton from "./NavButton";
+import Button from "@mui/material/Button";
 import QRCodeLinkedIn from "../../images/qr-code.svg";
 import Profile from "../../images/profile.jpg";
 import BackgroundImage from "../../images/vertical_navbar_background.png";
-import React, { useState } from "react";
-import Button from "@mui/material/Button";
+import { theme } from "../../theme";
 
 const VerticalSeparation = styled.div`
   width: 32px;
@@ -14,6 +13,9 @@ const VerticalSeparation = styled.div`
   border-right: 3px solid #000000;
   border-left: 3px solid #000000;
   background-image: url(${BackgroundImage});
+  @media only screen and (max-width: ${theme.breakpoints.desktop}) {
+    display: none;
+  }
 `;
 
 const SignatureSquare = styled.div`
@@ -23,16 +25,6 @@ const SignatureSquare = styled.div`
   bottom: 0px;
   left: -110px;
   background-color: #000000;
-  @media only screen and (max-height: 620px) {
-    width: 180px;
-    height: 180px;
-    left: -80px;
-  }
-  @media only screen and (max-height: 400px) {
-    width: 180px;
-    height: 60px;
-    left: -80px;
-  }
 `;
 
 const Name = styled.h1`
@@ -40,9 +32,6 @@ const Name = styled.h1`
   text-align: center;
   margin-top: 6px;
   margin-bottom: 0px;
-  @media only screen and (max-height: 620px) {
-    font-size: 1.4em;
-  }
 `;
 const JobName = styled.h3`
   color: #ffffff;
@@ -51,9 +40,6 @@ const JobName = styled.h3`
   margin-top: -6px;
   margin-right: 18px;
   font-size: 1.2em;
-  @media only screen and (max-height: 620px) {
-    font-size: 1em;
-  }
 `;
 
 const ProfileImage = styled.img`
@@ -62,13 +48,6 @@ const ProfileImage = styled.img`
   position: absolute;
   bottom: 6px;
   right: 6px;
-  @media only screen and (max-height: 620px) {
-    width: 120px;
-    height: 120px;
-  }
-  @media only screen and (max-height: 400px) {
-    display: none;
-  }
 `;
 
 const QRCode = styled(ProfileImage)`
@@ -87,13 +66,6 @@ const QRCodeLabel = styled.h5`
   right: 142px;
   bottom: 6px;
   font-size: 1em;
-  @media only screen and (max-height: 620px) {
-    font-size: 0.8em;
-    right: 108px;
-  }
-  @media only screen and (max-height: 400px) {
-    display: none;
-  }
 `;
 
 const ContactLinks = styled.div`
@@ -102,12 +74,6 @@ const ContactLinks = styled.div`
   text-orientation: upright;
   position: absolute;
   left: 12px;
-  @media only screen and (max-height: 620px) {
-    left: 6px;
-  }
-  @media only screen and (max-height: 400px) {
-    display: none;
-  }
 `;
 
 export default styled(function NavbarDesktop({ className, children }) {
@@ -115,9 +81,9 @@ export default styled(function NavbarDesktop({ className, children }) {
     <>
       <nav className={className}>
         {routes.map(({ path, name, ...props }) => (
-          <NavButton href={path} key={path} {...props}>
+          <Button color="black" href={path} key={path} {...props}>
             {name}
-          </NavButton>
+          </Button>
         ))}
       </nav>
       <VerticalSeparation>
@@ -126,21 +92,27 @@ export default styled(function NavbarDesktop({ className, children }) {
           <JobName>Développeuse</JobName>
           <ContactLinks>
             {contactIconsLinks.map(({ url, name, startIcon, ...props }) => (
-              <a style={{ color: "#ffffff" }} href={url} key={name}>
+              <a
+                style={{ color: "#ffffff" }}
+                href={url}
+                key={name}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {startIcon}
               </a>
             ))}
           </ContactLinks>
           <QRCodeLabel>LinkedIn</QRCodeLabel>
           <ProfileImage src={Profile} alt={"Heslot Lisa profile picture"} />
-          <QRCode src={QRCodeLinkedIn} alt={"Heslot Lisa LinkedIn qr code"} />
+          <QRCode src={QRCodeLinkedIn} alt={"Heslot Lisa LinkedIn QR code"} />
         </SignatureSquare>
       </VerticalSeparation>
     </>
   );
 })`
   background-color: #ffffff;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: ${theme.breakpoints.desktop}) {
     display: none;
   }
   display: flex;

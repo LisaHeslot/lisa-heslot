@@ -1,6 +1,10 @@
 import Index from "../pages/Index.jsx";
 import Who from "../pages/Who.jsx";
-import { Home, AccountCircle } from "@mui/icons-material";
+import Formations from "../pages/Formations.jsx";
+import Skills from "../pages/Skills.jsx";
+import Dev from "../pages/Dev.jsx";
+import Experiences from "../pages/Experiences.jsx";
+import { Home, AccountCircle, School } from "@mui/icons-material";
 
 export const routes = [
   {
@@ -14,5 +18,29 @@ export const routes = [
     element: <Who />,
     name: "Me connaître",
     startIcon: <AccountCircle />,
+  },
+  {
+    path: "/formations",
+    element: <Formations />,
+    name: "Formations",
+    startIcon: <School />,
+  },
+  {
+    path: "/skills",
+    element: <Skills />,
+    name: "Skills",
+    startIcon: <Skills />,
+  },
+  {
+    path: "/dev",
+    element: <Dev />,
+    name: "Développement",
+    startIcon: <Dev />,
+  },
+  {
+    path: "/experiences",
+    element: <Experiences />,
+    name: "Expériences",
+    startIcon: <Experiences />,
   },
 ];
