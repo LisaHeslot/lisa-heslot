@@ -19,6 +19,7 @@ export default styled(function BubbleModal({
       onClose={handleClose}
       aria-labelledby="keep-mounted-modal-title"
       aria-describedby="keep-mounted-modal-description"
+      style={{ border: 0 }}
     >
       <Box className={className}>
         <Button
@@ -47,6 +48,7 @@ export default styled(function BubbleModal({
   height: 350px;
   overflow: auto;
   background-color: #ffffff;
-  border: 3px solid ${theme.palette.green.main};
+  border-radius: 18px;
   padding: 18px;
+  outline: none;
 `;
