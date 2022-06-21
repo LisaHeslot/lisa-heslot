@@ -5,7 +5,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
 
-export default function ControlledAccordions({ data }) {
+export default function ControlledAccordions({ data, children }) {
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -28,7 +28,7 @@ export default function ControlledAccordions({ data }) {
           </AccordionSummary>
           <AccordionDetails>
             <a href={el.url} target="_blank" rel="noreferrer">
-              {el.school}
+              {el.school || el.job}
             </a>
             <br />
             {el.description}

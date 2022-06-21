@@ -2,7 +2,8 @@ import Index from "../pages/Index.jsx";
 import Who from "../pages/Who.jsx";
 import Formations from "../pages/Formations.jsx";
 import Skills from "../pages/Skills.jsx";
-import { Home, AccountCircle, School, Build } from "@mui/icons-material";
+import Experiences from "../pages/Experiences.jsx";
+import { Home, AccountCircle, School, Build, Work } from "@mui/icons-material";
 
 export const routes = [
   {
@@ -28,5 +29,11 @@ export const routes = [
     element: <Skills />,
     name: "Skills",
     startIcon: <Build />,
+  },
+  {
+    path: "/experiences",
+    element: <Experiences />,
+    name: "Expériences",
+    startIcon: <Work />,
   },
 ];

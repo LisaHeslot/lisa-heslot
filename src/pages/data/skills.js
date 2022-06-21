@@ -4,7 +4,7 @@ export const dataMapping = {
     description: "Développement côté serveur d'applications web, api...",
     tags: [
       { name: "ExpressJS", url: "https://expressjs.com/fr/" },
-      { name: ".mjs", url: "https://nodejs.org/static/images/logo.svg" },
+      { name: ".mjs", url: "https://nodejs.org/" },
       {
         name: "TypeScript",
         url: "https://www.typescriptlang.org/",
@@ -110,4 +110,18 @@ export const series = [
       },
     ],
   },
+];
+
+export const dataSecondary = [
+  { name: "Docker", url: "https://www.docker.com/" },
+  { name: "webpack", url: "https://webpack.js.org/" },
+  { name: "Visual Studio Code", url: "" },
+  { name: "Eclipse", url: "" },
+  { name: "IntelliJ", url: "" },
+  { name: "Wamp64", url: "" },
+  { name: "Mamp", url: "" },
+  { name: "Git", url: "" },
+  { name: "GitHub", url: "" },
+  { name: "BitBucket", url: "" },
+  { name: "Jenkins", url: "" },
 ];

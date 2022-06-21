@@ -4,7 +4,6 @@ import { theme } from "../../theme.js";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Chip from "@mui/material/Chip";
-import Avatar from "@mui/material/Avatar";
 
 const Title = styled.h4`
   margin: 0;
@@ -21,7 +20,6 @@ export default styled(function ChartTooltip({
 }) {
   if (!selectedData) return null;
   const { title, description, tags } = selectedData;
-  console.log(selectedData);
   return (
     <div className={className}>
       <IconButton
@@ -34,7 +32,9 @@ export default styled(function ChartTooltip({
       <Title>{title}</Title>
       <Description>{description}</Description>
       {tags.map(({ name, url }) => (
-        <Chip href={url} label={name} clickable style={{ margin: "3px" }} />
+        <a href={url} target="_blank" rel="noreferrer">
+          <Chip label={name} clickable style={{ margin: "3px" }} />
+        </a>
       ))}
     </div>
   );

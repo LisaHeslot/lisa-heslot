@@ -4,7 +4,16 @@ import Chart from "../components/charts/Chart";
 import ChartTooltip from "../components/charts/ChartTooltip";
 import { theme } from "../theme";
 import { useState } from "react";
-import { dataMapping, series } from "./data/skills";
+import { dataMapping, series, dataSecondary } from "./data/skills";
+import styled from "styled-components";
+import TagsMap from "../components/LinkedChips";
+
+const ChartContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default function Skills() {
   const [selectedData, setSelectedData] = useState(null);
@@ -14,7 +23,6 @@ export default function Skills() {
 
   const options = {
     chart: {
-      height: 350,
       type: "treemap",
       events: {
         dataPointSelection: function (e, __, { seriesIndex, dataPointIndex }) {
@@ -24,6 +32,12 @@ export default function Skills() {
           const index = series[seriesIndex]?.data[dataPointIndex]?.x;
           setSelectedData(dataMapping[index]);
         },
+      },
+      toolbar: {
+        show: false,
+      },
+      zoom: {
+        enabled: false,
       },
     },
     plotOptions: {
@@ -64,11 +78,15 @@ export default function Skills() {
     <Page>
       <Content>
         <h2>Skills</h2>
-        <h4>Langages, frameworks, bases de données...</h4>
-        <div style={{ position: "relative" }}>
+        <h4 style={{ marginBottom: 0 }}>
+          Langages, frameworks, bases de données...
+        </h4>
+        <ChartContainer>
           <Chart options={options} series={series} type="treemap" />
           <ChartTooltip selectedData={selectedData} handleClose={handleClose} />
-        </div>
+        </ChartContainer>
+        <h4>Outils utilisés, environnements, connaissances annexes...</h4>
+        <TagsMap tags={dataSecondary} />
       </Content>
     </Page>
   );

@@ -1,6 +1,9 @@
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
+  typography: {
+    fontFamily: ["Noto Sans", "Roboto", "Arial", "sans-serif"].join(","),
+  },
   status: {
     danger: "#e53e3e",
   },

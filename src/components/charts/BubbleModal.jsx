@@ -47,6 +47,11 @@ export default styled(function BubbleModal({
   max-width: 80%;
   height: 350px;
   overflow: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   background-color: #ffffff;
   border-radius: 18px;
   padding: 18px;

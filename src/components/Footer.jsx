@@ -24,7 +24,6 @@ export default styled(function Footer({ className, children }) {
   padding: 24px;
   position: absolute;
   bottom: 0;
-  width: 100%;
   height: calc(70px - 48px);
   @media only screen and (min-width: ${theme.breakpoints.desktop}) {
     left: calc(180px + 164px + 24px + 6px);
