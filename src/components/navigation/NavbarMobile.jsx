@@ -24,6 +24,7 @@ const HorizontalSeparation = styled.div`
 `;
 
 const SignatureSquare = styled.div`
+  z-index: 2;
   width: 160px;
   height: 160px;
   position: absolute;
@@ -174,6 +175,7 @@ export default styled(function NavbarMobile({ className, children }) {
     </>
   );
 })`
+  z-index: 1;
   @media only screen and (min-width: ${theme.breakpoints.desktop}) {
     display: none;
   }

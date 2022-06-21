@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import { routes } from "./router/routes";
+import { routes, routesSecondary } from "./router/routes";
 import "normalize.css";
 import { theme } from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
@@ -13,6 +13,9 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <Routes>
         {routes.map((route) => (
+          <Route path={route.path} element={route.element} key={route.path} />
+        ))}
+        {routesSecondary.map((route) => (
           <Route path={route.path} element={route.element} key={route.path} />
         ))}
       </Routes>

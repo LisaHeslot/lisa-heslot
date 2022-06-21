@@ -5,9 +5,9 @@ import React, { useState, useEffect } from "react";
 export default styled(function Content({ className, children }) {
   const [style, setStyle] = useState({});
   useEffect(() => {
-    setStyle({ height: "calc(100% - 48px - 48px)" });
+    setStyle({ height: "calc(100% - 48px - 48px)", opacity: 1 });
     return () => {
-      setStyle({ height: 0 });
+      setStyle({ height: 0, opacity: 0 });
     };
   }, []);
 
@@ -22,6 +22,7 @@ export default styled(function Content({ className, children }) {
   padding: 24px;
   overflow: auto;
   height: 0;
+  opacity: 0;
   width: 60%;
   padding-left: 118px;
   @media only screen and (max-width: ${theme.breakpoints.desktop}) {
@@ -34,8 +35,8 @@ export default styled(function Content({ className, children }) {
   }
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  transition-property: height;
-  transition-duration: 1.5s;
-  transition-timing-function: linear;
-  transition-delay: 0s;
+
+  transition: height 1s, opacity 1.5s;
+
+  z-index: 0;
 `;

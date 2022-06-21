@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import BackgroundImage from "../images/footer_background.png";
 import { footerLinks } from "../router/links.js";
+import { routesSecondary } from "../router/routes.js";
 import Button from "@mui/material/Button";
 import { theme } from "../theme";
 
@@ -17,6 +18,16 @@ export default styled(function Footer({ className, children }) {
             {label}
           </Button>
         </a>
+      ))}
+      {routesSecondary.map(({ path, name, ...props }) => (
+        <Button
+          style={{ fontSize: "0.6em", padding: "0px 6px" }}
+          color="black"
+          href={path}
+          key={path}
+        >
+          {name}
+        </Button>
       ))}
     </div>
   );
@@ -35,5 +46,4 @@ export default styled(function Footer({ className, children }) {
   @media only screen and (max-width: ${theme.breakpoints.desktop}) {
     display: none;
   }
-  background: no-repeat bottom 50px right 100px/100% url(${BackgroundImage});
 `;

@@ -3,7 +3,17 @@ import Who from "../pages/Who.jsx";
 import Formations from "../pages/Formations.jsx";
 import Skills from "../pages/Skills.jsx";
 import Experiences from "../pages/Experiences.jsx";
-import { Home, AccountCircle, School, Build, Work } from "@mui/icons-material";
+import Projects from "../pages/Projects.jsx";
+import Legal from "../pages/Legal.jsx";
+import {
+  Home,
+  AccountCircle,
+  School,
+  Build,
+  Work,
+  WorkOutline,
+  Policy,
+} from "@mui/icons-material";
 
 export const routes = [
   {
@@ -35,5 +45,20 @@ export const routes = [
     element: <Experiences />,
     name: "Expériences",
     startIcon: <Work />,
+  },
+  {
+    path: "/projects",
+    element: <Projects />,
+    name: "Projets",
+    startIcon: <WorkOutline />,
+  },
+];
+
+export const routesSecondary = [
+  {
+    path: "/legal",
+    element: <Legal />,
+    name: "Mentions légales",
+    startIcon: <Policy />,
   },
 ];

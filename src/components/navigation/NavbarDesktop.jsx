@@ -25,6 +25,7 @@ const SignatureSquare = styled.div`
   bottom: 0px;
   left: -110px;
   background-color: #000000;
+  z-index: 2;
 `;
 
 const Name = styled.h1`
@@ -116,6 +117,7 @@ export default styled(function NavbarDesktop({ className, children }) {
     display: none;
   }
   display: flex;
+  z-index: 1;
   flex-direction: column;
   width: 240px;
   height: calc(100% - 240px);
